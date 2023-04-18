@@ -242,6 +242,7 @@ const TextField3: any = styled(TextField)(({ theme }: any) => ({
 }));
 
 const Button1: any = styled(Button)(({ theme }: any) => ({
+  alignSelf: `stretch`,
   zIndex: `0`,
   margin: `16px 0px 0px 0px`,
   color: theme.palette['primary']['contrast'],
