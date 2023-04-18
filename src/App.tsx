@@ -19,8 +19,7 @@ function App() {
           width: '100vw'
         }}>
           <Box sx={{
-            width: '100%',
-            maxWidth: '550px'
+            width: '50%',
           }}>
             <Routes>
               <Route path="/" element={<FormEntity />} />
