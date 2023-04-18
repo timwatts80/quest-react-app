@@ -21,19 +21,18 @@ import {
   TextField,
   Checkbox,
   FormControlLabel,
-  Button,
 } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
-import { FormEntityProps } from 'src/types';
-import useFormEntity from 'src/components/FormEntity/useFormEntity';
+import { FormEntityOldProps } from 'src/types';
+import useFormEntityOld from 'src/components/FormEntityOld/useFormEntityOld';
 
-const FormEntity1: any = styled('div')({
+const FormEntity: any = styled('div')({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100vw',
+  width: `711px`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
@@ -42,7 +41,7 @@ const FormEntity1: any = styled('div')({
 });
 
 const Typography1: any = styled(Typography)(({ theme }: any) => ({
-  zIndex: `6`,
+  zIndex: `5`,
   margin: `0px`,
   color: theme.palette['text']['primary'],
   fontStyle: theme.typography['typography']['h6'].fontStyle,
@@ -57,7 +56,7 @@ const Typography1: any = styled(Typography)(({ theme }: any) => ({
 
 const Select1: any = styled(FormControl)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  zIndex: `5`,
+  zIndex: `4`,
   margin: `16px 0px 0px 0px`,
   color: theme.palette['text']['secondary'],
   fontStyle: theme.typography['components']['input-label'].fontStyle,
@@ -72,7 +71,7 @@ const Select1: any = styled(FormControl)(({ theme }: any) => ({
 
 const TextField1: any = styled(TextField)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  zIndex: `4`,
+  zIndex: `3`,
   margin: `16px 0px 0px 0px`,
   color: theme.palette['text']['secondary'],
   fontStyle: theme.typography['components']['input-label'].fontStyle,
@@ -95,7 +94,7 @@ const Frame256: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `3`,
+  zIndex: `2`,
   margin: `16px 0px 0px 0px`,
 });
 
@@ -163,7 +162,7 @@ const Frame257: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `2`,
+  zIndex: `1`,
   margin: `16px 0px 0px 0px`,
 });
 
@@ -207,7 +206,7 @@ const Frame258: any = styled('div')({
   padding: `0px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
-  zIndex: `1`,
+  zIndex: `0`,
   margin: `16px 0px 0px 0px`,
 });
 
@@ -241,27 +240,13 @@ const TextField3: any = styled(TextField)(({ theme }: any) => ({
   textTransform: theme.typography['components']['input-label'].textTransform,
 }));
 
-const Button1: any = styled(Button)(({ theme }: any) => ({
-  zIndex: `0`,
-  margin: `16px 0px 0px 0px`,
-  color: theme.palette['primary']['contrast'],
-  fontStyle: theme.typography['components']['button-large'].fontStyle,
-  fontFamily: theme.typography['components']['button-large'].fontFamily,
-  fontWeight: theme.typography['components']['button-large'].fontWeight,
-  fontSize: theme.typography['components']['button-large'].fontSize,
-  letterSpacing: theme.typography['components']['button-large'].letterSpacing,
-  lineHeight: theme.typography['components']['button-large'].lineHeight,
-  textDecoration: theme.typography['components']['button-large'].textDecoration,
-  textTransform: theme.typography['components']['button-large'].textTransform,
-}));
-
-function FormEntity(props: FormEntityProps): JSX.Element {
-  const { data, fns } = useFormEntity();
+function FormEntityOld(props: FormEntityOldProps): JSX.Element {
+  const { data, fns } = useFormEntityOld();
 
   return (
-    <FormEntity1 className={props.className}>
+    <FormEntity className={props.className}>
       <Typography1 variant={'body1'} gutterBottom={false}>
-        {fns.getEntity}
+        {fns.getEntity()}
       </Typography1>
       <Select1 variant={'outlined'} size={'small'} disabled={false}>
         <InputLabel>{'Entity type'}</InputLabel>
@@ -285,7 +270,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
           <Select2 variant={'outlined'} size={'small'} disabled={false}>
             <InputLabel>{'Tax ID type'}</InputLabel>
             <Select label={'Tax ID type'}>
-              {data.taxIdType.map((item, index) => (
+              {data.taxIdTypes.map((item, index) => (
                 <MenuItem key={index} value={item.value}>
                   {item.text}
                 </MenuItem>
@@ -298,31 +283,29 @@ function FormEntity(props: FormEntityProps): JSX.Element {
             variant={'outlined'}
             disabled={false}
             size={'small'}
-            label={'Tax ID number'}
+            label={'Number'}
             InputProps={{}}
           />
         </Frame260>
       </Frame256>
       <Frame257>
-        <Select3 variant={'outlined'} size={'small'} disabled={false}>
+        <Select3
+          options={[{ value: 'Quest', text: 'MadeWithQuest' }]}
+          variant={'outlined'}
+          size={'small'}
+          disabled={false}
+        >
           <InputLabel>{'Foreign investor'}</InputLabel>
-          <Select label={'Foreign investor'}>
-            {data.foreignInvestorType.map((item, index) => (
-              <MenuItem key={index} value={item.value}>
-                {item.text}
-              </MenuItem>
-            ))}
-          </Select>
+          <Select label={'Foreign investor'}></Select>
         </Select3>
-        <Select4 variant={'outlined'} size={'small'} disabled={false}>
+        <Select4
+          options={[{ value: 'Quest', text: 'MadeWithQuest' }]}
+          variant={'outlined'}
+          size={'small'}
+          disabled={false}
+        >
           <InputLabel>{'Accreditation'}</InputLabel>
-          <Select label={'Accreditation'}>
-            {data.accreditationTypes.map((item, index) => (
-              <MenuItem key={index} value={item.value}>
-                {item.text}
-              </MenuItem>
-            ))}
-          </Select>
+          <Select label={'Accreditation'}></Select>
         </Select4>
       </Frame257>
       <Frame258>
@@ -346,16 +329,8 @@ function FormEntity(props: FormEntityProps): JSX.Element {
           InputProps={{}}
         />
       </Frame258>
-      <Button1
-        size={'large'}
-        color={'primary'}
-        disabled={false}
-        variant={'contained'}
-      >
-        {'Label'}
-      </Button1>
-    </FormEntity1>
+    </FormEntity>
   );
 }
 
-export default FormEntity;
+export default FormEntityOld;
