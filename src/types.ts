@@ -17,9 +17,11 @@
 
 
 
+
 export interface FormEntityProps {
   className?: any;
 }
+
 
 
 
@@ -33,9 +35,11 @@ export interface SampleCardProps {
 
 
 
+
 export interface SampleCardGridProps {
   className?: any;
 }
+
 
 
 
@@ -50,10 +54,12 @@ export interface TestCardProps {
 
 
 
+
 export interface Form1Props {
   className?: any;
   prop1: any;
 }
+
 
 
 
