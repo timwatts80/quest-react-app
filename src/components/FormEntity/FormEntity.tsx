@@ -352,7 +352,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
         disabled={false}
         variant={'contained'}
       >
-        {'Label'}
+        {fns.getButtonLabel}
       </Button1>
     </FormEntity1>
   );

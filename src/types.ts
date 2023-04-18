@@ -14,15 +14,23 @@
  **********************************************************************/
 
 
+
+export interface FormEntityProps {
+  className?: any;
+}
+
+
 export interface SampleCardProps {
   className?: any;
   metadata: any;
 }
 
 
+
 export interface SampleCardGridProps {
   className?: any;
 }
+
 
 
 export interface TestCardProps {
@@ -31,17 +39,15 @@ export interface TestCardProps {
 }
 
 
+
 export interface Form1Props {
   className?: any;
   prop1: any;
 }
 
 
+
 export interface FormEntityOldProps {
   className?: any;
 }
 
-
-export interface FormEntityProps {
-  className?: any;
-}
