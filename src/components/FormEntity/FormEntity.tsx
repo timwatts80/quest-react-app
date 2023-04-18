@@ -34,7 +34,6 @@ const FormEntity1: any = styled('div')({
   isolation: `isolate`,
   flexDirection: `column`,
   width: '100%',
-  maxWidth: '50%',
   justifyContent: `flex-center`,
   alignItems: `flex-start`,
   padding: `0px`,

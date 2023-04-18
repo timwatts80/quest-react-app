@@ -14,10 +14,16 @@ function App() {
           justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
+          width: '100vw'
         }}>
-          <Routes>
-            <Route path="/" element={<FormEntity />} />
-          </Routes>
+          <Box sx={{
+            width: '100%',
+            maxWidth: '550px'
+          }}>
+            <Routes>
+              <Route path="/" element={<FormEntity />} />
+            </Routes>
+          </Box>
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>
