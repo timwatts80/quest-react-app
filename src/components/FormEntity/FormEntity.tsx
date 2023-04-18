@@ -261,7 +261,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
   return (
     <FormEntity1 className={props.className}>
       <Typography1 variant={'body1'} gutterBottom={false}>
-        {fns.getEntity}
+        {fns.getEntity()}
       </Typography1>
       <Select1 variant={'outlined'} size={'small'} disabled={false}>
         <InputLabel>{'Entity type'}</InputLabel>
@@ -352,7 +352,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
         disabled={false}
         variant={'contained'}
       >
-        {fns.getButtonLabel}
+        {fns.getButtonLabel()}
       </Button1>
     </FormEntity1>
   );

@@ -44,7 +44,6 @@ type FormEntityData = {
 }
 
 const useFormEntity = () => {
-  const getButtonLabel = (): any => {};
   let data: FormEntityData = {
     entityTypes: [
       { value: 'entityType1', text: 'Entity Type 1' },
@@ -59,11 +58,16 @@ const useFormEntity = () => {
     foreignInvestorType: [],
     accreditationTypes: []
   };
+
   const getEntity = (): any => {
     return "Entity";
   };
 
-  let fns: any = { getEntity ,getButtonLabel};
+  const getButtonLabel = (): any => {
+    return "Button";
+  };
+
+  let fns: any = { getEntity, getButtonLabel};
   return { data, fns };
 };
 
