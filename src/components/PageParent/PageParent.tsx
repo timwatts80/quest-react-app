@@ -63,7 +63,6 @@ const Header1: any = styled('div')({
 
 const Header2: any = styled(Header)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  height: `174px`,
   margin: `0px`,
 }));
 
