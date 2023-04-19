@@ -18,20 +18,20 @@ import Header from 'src/components/Header/Header';
 import FormEntity from 'src/components/FormEntity/FormEntity';
 import { PageParentProps } from 'src/types';
 
-const PageParent1: any = styled('div')(({theme}: any) => ({
-  backgroundColor: 'red',
+const PageParent1: any = styled('div')({
+  backgroundColor: `rgba(255, 255, 255, 1)`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
+  height: '100vh',
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
   overflow: `hidden`,
-}));
+});
 
 const PageContainer: any = styled('div')({
   display: `flex`,
