@@ -101,7 +101,7 @@ const RightColumn: any = styled('div')({
   flexDirection: `column`,
   justifyContent: `flex-start`,
   alignItems: `center`,
-  padding: `48px 72px`,
+  padding: `48px 100px`,
   boxSizing: `border-box`,
   alignSelf: `stretch`,
   flex: `1`,
