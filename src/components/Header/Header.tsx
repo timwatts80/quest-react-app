@@ -13,10 +13,7 @@
  **********************************************************************/
 
 import React from 'react';
-import VectorImage from 'src/assets/images/Header_Vector.png';
-import Vector1Image from 'src/assets/images/Header_Vector_1.png';
-import Vector2Image from 'src/assets/images/Header_Vector_2.png';
-import Vector3Image from 'src/assets/images/Header_Vector_3.png';
+import UmbLogoImage from 'src/assets/images/Header_UMB_logo.png';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'src/types';
 
@@ -48,50 +45,10 @@ const TopNav: any = styled('div')(({ theme }: any) => ({
   margin: `0px`,
 }));
 
-const UmbLogo: any = styled('div')({
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `0px`,
-  boxSizing: `border-box`,
-  width: `140.08px`,
+const UmbLogo: any = styled('img')({
   height: `36px`,
+  width: `140.08px`,
   margin: `0px`,
-});
-
-const Vector: any = styled('img')({
-  height: `28.05px`,
-  width: `137.08px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `0px`,
-});
-
-const Vector1: any = styled('img')({
-  height: `5.25px`,
-  width: `136.04px`,
-  position: `absolute`,
-  left: `0px`,
-  top: `31px`,
-});
-
-const Vector2: any = styled('img')({
-  height: `2.58px`,
-  width: `1.96px`,
-  position: `absolute`,
-  left: `137px`,
-  top: `26px`,
-});
-
-const Vector3: any = styled('img')({
-  height: `4.47px`,
-  width: `4.48px`,
-  position: `absolute`,
-  left: `136px`,
-  top: `25px`,
 });
 
 const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
@@ -137,12 +94,7 @@ function Header(props: HeaderProps): JSX.Element {
   return (
     <Header1 className={props.className}>
       <TopNav>
-        <UmbLogo>
-          <Vector src={VectorImage} loading="lazy" alt={'Vector'} />
-          <Vector1 src={Vector1Image} loading="lazy" alt={'Vector'} />
-          <Vector2 src={Vector2Image} loading="lazy" alt={'Vector'} />
-          <Vector3 src={Vector3Image} loading="lazy" alt={'Vector'} />
-        </UmbLogo>
+        <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs></Breadcrumbs>
       <AppNav></AppNav>
