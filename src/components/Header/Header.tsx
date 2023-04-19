@@ -13,10 +13,11 @@
  **********************************************************************/
 
 import React from 'react';
+import VectorImage from 'src/assets/images/Header_Vector.png';
+import Vector1Image from 'src/assets/images/Header_Vector_1.png';
+import Vector2Image from 'src/assets/images/Header_Vector_2.png';
+import Vector3Image from 'src/assets/images/Header_Vector_3.png';
 import { styled } from '@mui/material/styles';
-import TopNav from 'src/components/TopNav/TopNav';
-import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs';
-import AppNav from 'src/components/AppNav/AppNav';
 import { HeaderProps } from 'src/types';
 
 const Header1: any = styled('div')({
@@ -24,45 +25,128 @@ const Header1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  height: 'auto',
   width: '100%',
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
   boxSizing: `border-box`,
+  height: 'auto',
 });
 
-const TopNav1: any = styled(TopNav)(({ theme }: any) => ({
+const TopNav: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(0, 60, 110, 1)`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `16px 100px`,
+  boxSizing: `border-box`,
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
 }));
 
-const Breadcrumbs1: any = styled(Breadcrumbs)(({ theme }: any) => ({
+const UmbLogo: any = styled('div')({
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  width: `140.08px`,
+  height: `36px`,
+  margin: `0px`,
+});
+
+const Vector: any = styled('img')({
+  height: `28.05px`,
+  width: `137.08px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `0px`,
+});
+
+const Vector1: any = styled('img')({
+  height: `5.25px`,
+  width: `136.04px`,
+  position: `absolute`,
+  left: `0px`,
+  top: `31px`,
+});
+
+const Vector2: any = styled('img')({
+  height: `2.58px`,
+  width: `1.96px`,
+  position: `absolute`,
+  left: `137px`,
+  top: `26px`,
+});
+
+const Vector3: any = styled('img')({
+  height: `4.47px`,
+  width: `4.48px`,
+  position: `absolute`,
+  left: `136px`,
+  top: `25px`,
+});
+
+const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
+  backgroundColor: `rgba(16, 84, 138, 1)`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
   alignSelf: `stretch`,
   height: `56px`,
   margin: `0px`,
 }));
 
-const AppNav1: any = styled(AppNav)(({ theme }: any) => ({
+const AppNav: any = styled('div')({
+  backgroundColor: `rgba(224, 224, 224, 1)`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
   alignSelf: `stretch`,
   height: `50px`,
   margin: `0px`,
-}));
+});
 
-const AppNav2: any = styled(AppNav)(({ theme }: any) => ({
+const Spacer: any = styled('div')({
+  backgroundColor: `rgba(255, 255, 255, 1)`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
   alignSelf: `stretch`,
-  flex: `1`,
+  height: `40px`,
   margin: `0px`,
-}));
+});
 
 function Header(props: HeaderProps): JSX.Element {
   return (
     <Header1 className={props.className}>
-      <TopNav1 />
-      <Breadcrumbs1 />
-      <AppNav1 />
-      <AppNav2 />
+      <TopNav>
+        <UmbLogo>
+          <Vector src={VectorImage} loading="lazy" alt={'Vector'} />
+          <Vector1 src={Vector1Image} loading="lazy" alt={'Vector'} />
+          <Vector2 src={Vector2Image} loading="lazy" alt={'Vector'} />
+          <Vector3 src={Vector3Image} loading="lazy" alt={'Vector'} />
+        </UmbLogo>
+      </TopNav>
+      <Breadcrumbs></Breadcrumbs>
+      <AppNav></AppNav>
+      <Spacer></Spacer>
     </Header1>
   );
 }
