@@ -16,6 +16,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import Header from 'src/components/Header/Header';
 import FormEntity from 'src/components/FormEntity/FormEntity';
+import SubTabs from 'src/components/SubTabs/SubTabs';
 import { PageParentProps } from 'src/types';
 
 const PageParent1: any = styled('div')(({ theme }: any) => ({
@@ -122,7 +123,9 @@ function PageParent(props: PageParentProps): JSX.Element {
           <Header2 />
         </Header1>
         <AppBody>
-          <LeftColumn></LeftColumn>
+          <LeftColumn>
+            <SubTabs />
+          </LeftColumn>
           <RightColumn>
             <FormEntity1 />
           </RightColumn>
