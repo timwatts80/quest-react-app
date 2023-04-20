@@ -89,7 +89,7 @@ const LeftColumn: any = styled('div')({
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  width: `421px`,
+  width: '33%',
   margin: `0px`,
 });
 
@@ -106,6 +106,7 @@ const RightColumn: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px 0px 0px 8px`,
+  width: '67%',
 });
 
 const FormEntity1: any = styled(FormEntity)(({ theme }: any) => ({
