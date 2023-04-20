@@ -91,7 +91,7 @@ const LeftColumn: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px`,
-  width: '33%',
+  width: '25%',
 }));
 
 const RightColumn: any = styled('div')({
@@ -107,7 +107,7 @@ const RightColumn: any = styled('div')({
   alignSelf: `stretch`,
   flex: `1`,
   margin: `0px 0px 0px 8px`,
-  width: '67%',
+  width: '75%',
 });
 
 const FormEntity1: any = styled(FormEntity)(({ theme }: any) => ({
