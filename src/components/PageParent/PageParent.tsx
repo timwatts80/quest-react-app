@@ -14,7 +14,6 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import SubTabs from 'src/components/SubTabs/SubTabs';
 import Header from 'src/components/Header/Header';
 import FormEntity from 'src/components/FormEntity/FormEntity';
 import { PageParentProps } from 'src/types';
@@ -81,8 +80,8 @@ const AppBody: any = styled('div')({
   margin: `0px`,
 });
 
-const LeftColumn: any = styled('div')({
-  backgroundColor: `rgba(238, 238, 238, 1)`,
+const LeftColumn: any = styled('div')(({ theme }: any) => ({
+  color: theme.palette['primary']['contrast'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -90,9 +89,10 @@ const LeftColumn: any = styled('div')({
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  width: '33%',
+  flex: `1`,
   margin: `0px`,
-});
+  width: '33%',
+}));
 
 const RightColumn: any = styled('div')({
   backgroundColor: `rgba(255, 255, 255, 1)`,
@@ -123,9 +123,7 @@ function PageParent(props: PageParentProps): JSX.Element {
           <Header2 />
         </Header1>
         <AppBody>
-          <LeftColumn>
-            <SubTabs />
-          </LeftColumn>
+          <LeftColumn></LeftColumn>
           <RightColumn>
             <FormEntity1 />
           </RightColumn>
