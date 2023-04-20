@@ -42,7 +42,7 @@ const FormEntity1: any = styled('div')({
 });
 
 const Typography1: any = styled(Typography)(({ theme }: any) => ({
-  zIndex: `6`,
+  zIndex: `7`,
   margin: `0px`,
   color: theme.palette['text']['primary'],
   fontStyle: theme.typography['typography']['h6'].fontStyle,
@@ -57,7 +57,7 @@ const Typography1: any = styled(Typography)(({ theme }: any) => ({
 
 const Select1: any = styled(FormControl)(({ theme }: any) => ({
   alignSelf: `stretch`,
-  zIndex: `5`,
+  zIndex: `6`,
   margin: `16px 0px 0px 0px`,
   color: theme.palette['text']['secondary'],
   fontStyle: theme.typography['components']['input-label'].fontStyle,
@@ -71,6 +71,21 @@ const Select1: any = styled(FormControl)(({ theme }: any) => ({
 }));
 
 const TextField1: any = styled(TextField)(({ theme }: any) => ({
+  alignSelf: `stretch`,
+  zIndex: `5`,
+  margin: `16px 0px 0px 0px`,
+  color: theme.palette['text']['secondary'],
+  fontStyle: theme.typography['components']['input-label'].fontStyle,
+  fontFamily: theme.typography['components']['input-label'].fontFamily,
+  fontWeight: theme.typography['components']['input-label'].fontWeight,
+  fontSize: theme.typography['components']['input-label'].fontSize,
+  letterSpacing: theme.typography['components']['input-label'].letterSpacing,
+  lineHeight: theme.typography['components']['input-label'].lineHeight,
+  textDecoration: theme.typography['components']['input-label'].textDecoration,
+  textTransform: theme.typography['components']['input-label'].textTransform,
+}));
+
+const TextField2: any = styled(TextField)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `4`,
   margin: `16px 0px 0px 0px`,
@@ -139,7 +154,7 @@ const Frame260: any = styled('div')({
   margin: `0px 0px 0px 16px`,
 });
 
-const TextField2: any = styled(TextField)(({ theme }: any) => ({
+const TextField3: any = styled(TextField)(({ theme }: any) => ({
   alignSelf: `stretch`,
   margin: `0px`,
   color: theme.palette['text']['secondary'],
@@ -226,7 +241,7 @@ const FormControlLabel1: any = styled(FormControlLabel)(({ theme }: any) => ({
   textTransform: theme.typography['typography']['body1'].textTransform,
 }));
 
-const TextField3: any = styled(TextField)(({ theme }: any) => ({
+const TextField4: any = styled(TextField)(({ theme }: any) => ({
   flex: `1`,
   zIndex: `0`,
   margin: `0px 0px 0px 16px`,
@@ -245,7 +260,6 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `0`,
   margin: `16px 0px 0px 0px`,
-  backgroundColor: theme.palette['primary']['main'],
   color: theme.palette['primary']['contrast'],
   fontStyle: theme.typography['components']['button-large'].fontStyle,
   fontFamily: theme.typography['components']['button-large'].fontFamily,
@@ -255,7 +269,6 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
   lineHeight: theme.typography['components']['button-large'].lineHeight,
   textDecoration: theme.typography['components']['button-large'].textDecoration,
   textTransform: theme.typography['components']['button-large'].textTransform,
-  '&:hover': {backgroundColor: theme.palette['primary']['dark']},
 }));
 
 function FormEntity(props: FormEntityProps): JSX.Element {
@@ -283,6 +296,13 @@ function FormEntity(props: FormEntityProps): JSX.Element {
         label={'Account name'}
         InputProps={{}}
       />
+      <TextField2
+        variant={'outlined'}
+        disabled={false}
+        size={'small'}
+        label={'Shirt size'}
+        InputProps={{}}
+      />
       <Frame256>
         <Frame259>
           <Select2 variant={'outlined'} size={'small'} disabled={false}>
@@ -297,7 +317,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
           </Select2>
         </Frame259>
         <Frame260>
-          <TextField2
+          <TextField3
             variant={'outlined'}
             disabled={false}
             size={'small'}
@@ -341,7 +361,7 @@ function FormEntity(props: FormEntityProps): JSX.Element {
           }
           label={'Control person exempt'}
         />
-        <TextField3
+        <TextField4
           variant={'outlined'}
           disabled={false}
           size={'small'}
