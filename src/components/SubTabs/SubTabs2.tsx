@@ -4,12 +4,35 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import FormEntity from 'src/components/FormEntity/FormEntity';
 
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
   value: number;
 }
+
+const tabStyles = {
+  root: {
+    textTransform: 'none',
+    minWidth: 72,
+    fontWeight: 'bold',
+    mr: 4,
+    fontSize: '2rem',
+    '&:hover': {
+      color: 'primary.main',
+      opacity: 1,
+    },
+    '&.Mui-selected': {
+      color: 'primary.main',
+      fontWeight: 'bold',
+    },
+    '&.Mui-focusVisible': {
+      boxShadow: '0 0 0 0.2rem rgba(0, 0, 255, .5)',
+    },
+    color: 'red'
+  },
+};
 
 const TabPanelWrapper = styled(Box)({
     '& .MuiTypography-root': {
@@ -60,37 +83,21 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', width: '25%', maxWidth: '100px' }}
+        sx={{ borderRight: 1, borderColor: 'divider', width: '25%', maxWidth: '200px'}}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab label="Item One" {...a11yProps(0)} sx={tabStyles} />
+        <Tab label="Item Two" {...a11yProps(1)} sx={tabStyles} />
+        <Tab label="Item Three" {...a11yProps(2)} sx={tabStyles} />
       </Tabs>
-      <TabPanel value={value} index={0}>
-        Item One
+      <TabPanel value={value} index={0} sx={{ p: 3, display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <FormEntity />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} sx={{ p: 3 }}>
         Item Two
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} sx={{ p: 3 }}>
         Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+      </TabPanel> 
     </Box>
   );
 }
