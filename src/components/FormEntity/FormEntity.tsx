@@ -245,6 +245,7 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `0`,
   margin: `16px 0px 0px 0px`,
+  backgroundColor: theme.palette['primary']['main'],
   color: theme.palette['primary']['contrast'],
   fontStyle: theme.typography['components']['button-large'].fontStyle,
   fontFamily: theme.typography['components']['button-large'].fontFamily,
@@ -254,6 +255,7 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
   lineHeight: theme.typography['components']['button-large'].lineHeight,
   textDecoration: theme.typography['components']['button-large'].textDecoration,
   textTransform: theme.typography['components']['button-large'].textTransform,
+  '&:hover': {backgroundColor: theme.palette['primary']['dark']},
 }));
 
 function FormEntity(props: FormEntityProps): JSX.Element {
