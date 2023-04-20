@@ -110,7 +110,7 @@ const RightColumn: any = styled('div')({
 });
 
 const FormEntity1: any = styled(FormEntity)(({ theme }: any) => ({
-  alignSelf: `stretch`,
+  width: `550px`,
   margin: `0px`,
 }));
 
