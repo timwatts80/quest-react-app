@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 import { Tabs, Tab } from "@mui/material";
+import { Button } from '@mui/material';
 import { MyTabProps } from 'src/types';
 
 const LinkTabs = styled('div')(({ theme }) => ({
