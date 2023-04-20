@@ -31,6 +31,7 @@
 
 
 
+
 export interface PageParentProps {
   className?: any;
 }
@@ -43,9 +44,11 @@ export interface PageParentProps {
 
 
 
+
 export interface HeaderProps {
   className?: any;
 }
+
 
 
 
@@ -79,9 +82,11 @@ export interface SampleCardProps {
 
 
 
+
 export interface SampleCardGridProps {
   className?: any;
 }
+
 
 
 
@@ -124,10 +129,12 @@ export interface TestCardProps {
 
 
 
+
 export interface Form1Props {
   className?: any;
   prop1: any;
 }
+
 
 
 
@@ -163,9 +170,11 @@ export interface FormEntityOldProps {
 
 
 
+
 export interface FormEntityProps {
   className?: any;
 }
+
 
 
 
