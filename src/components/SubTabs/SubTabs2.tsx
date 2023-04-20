@@ -18,7 +18,6 @@ const tabStyles = {
     minWidth: 72,
     fontWeight: 'bold',
     mr: 4,
-    fontSize: '2rem',
     '&:hover': {
       color: 'primary.main',
       opacity: 1,
@@ -30,7 +29,6 @@ const tabStyles = {
     '&.Mui-focusVisible': {
       boxShadow: '0 0 0 0.2rem rgba(0, 0, 255, .5)',
     },
-    color: 'red'
   },
 };
 
@@ -85,7 +83,7 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider', width: '25%', maxWidth: '200px'}}
       >
-        <Tab label="Item One" {...a11yProps(0)} sx={tabStyles} />
+        <Tab label="Entity" {...a11yProps(0)} sx={tabStyles} />
         <Tab label="Item Two" {...a11yProps(1)} sx={tabStyles} />
         <Tab label="Item Three" {...a11yProps(2)} sx={tabStyles} />
       </Tabs>
