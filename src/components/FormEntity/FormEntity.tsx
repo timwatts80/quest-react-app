@@ -33,7 +33,7 @@ const FormEntity1: any = styled('div')({
   position: `relative`,
   isolation: `isolate`,
   flexDirection: `column`,
-  width: '100%',
+  width: `700px`,
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   padding: `0px`,
