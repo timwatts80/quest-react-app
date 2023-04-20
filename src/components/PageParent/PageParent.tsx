@@ -16,7 +16,6 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import Header from 'src/components/Header/Header';
 import FormEntity from 'src/components/FormEntity/FormEntity';
-import VerticalTabs from '../SubTabs/SubTabs2';
 import { PageParentProps } from 'src/types';
 
 const PageParent1: any = styled('div')(({ theme }: any) => ({
@@ -90,7 +89,7 @@ const LeftColumn: any = styled('div')(({ theme }: any) => ({
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  width: '100%',
+  width: '25%',
   margin: `0px`,
 }));
 
@@ -123,9 +122,10 @@ function PageParent(props: PageParentProps): JSX.Element {
           <Header2 />
         </Header1>
         <AppBody>
-          <LeftColumn>
-            <VerticalTabs />
-          </LeftColumn>
+          <LeftColumn></LeftColumn>
+          <RightColumn>
+            <FormEntity1 />
+          </RightColumn>
         </AppBody>
       </PageContainer>
     </PageParent1>

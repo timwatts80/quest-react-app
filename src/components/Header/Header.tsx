@@ -31,7 +31,7 @@ const Header1: any = styled('div')({
 });
 
 const TopNav: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['primary']['dark'],
+  color: theme.palette['primary']['dark'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -52,7 +52,7 @@ const UmbLogo: any = styled('img')({
 });
 
 const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['primary']['main'],
+  color: theme.palette['primary']['main'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -65,7 +65,7 @@ const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
 }));
 
 const AppNav: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['colors']['grey']['300'],
+  color: theme.palette['colors']['grey']['300'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -78,7 +78,7 @@ const AppNav: any = styled('div')(({ theme }: any) => ({
 }));
 
 const Spacer: any = styled('div')(({ theme }: any) => ({
-  backgroundColor: theme.palette['primary']['contrast'],
+  color: theme.palette['primary']['contrast'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
