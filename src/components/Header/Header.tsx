@@ -45,7 +45,7 @@ const TopNav: any = styled('div', {
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-  backgroundColor: bgColor ? theme.palette['primary']['dark'],
+  backgroundColor: props.bgColor,
 }));
 
 const UmbLogo: any = styled('img')({
