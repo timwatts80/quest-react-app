@@ -30,8 +30,8 @@ const Header1: any = styled('div')({
   height: 'auto',
 });
 
-const TopNav: any = styled('div')(({ theme }: any) => ({
-  color: theme.palette['primary']['dark'],
+const TopNav: any = styled('div')({
+  backgroundColor: `rgba(255, 0, 0, 1)`,
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -43,7 +43,7 @@ const TopNav: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-}));
+});
 
 const UmbLogo: any = styled('img')({
   height: `36px`,
