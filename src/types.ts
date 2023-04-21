@@ -56,9 +56,11 @@
 
 
 
+
 export interface HeaderProps {
   className?: any;
 }
+
 
 
 
@@ -102,9 +104,11 @@ export interface TopNavProps {
 
 
 
+
 export interface BreadcrumbsProps {
   className?: any;
 };
+
 
 
 
@@ -121,9 +125,11 @@ export interface AppNavProps {
 
 
 
+
 export interface SpacerProps {
   className?: any;
 };
+
 
 
 
@@ -163,9 +169,11 @@ export interface FormEntityProps {
 
 
 
+
 export interface PageParentProps {
   className?: any;
 }
+
 
 
 
@@ -248,9 +256,11 @@ export interface SampleCardProps {
 
 
 
+
 export interface SampleCardGridProps {
   className?: any;
 }
+
 
 
 
@@ -343,6 +353,7 @@ export interface TestCardProps {
 
 
 
+
 export interface Form1Props {
   className?: any;
   prop1: any;
@@ -391,9 +402,11 @@ export interface Form1Props {
 
 
 
+
 export interface FormEntityOldProps {
   className?: any;
 }
+
 
 
 
