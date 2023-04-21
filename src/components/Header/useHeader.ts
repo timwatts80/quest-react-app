@@ -16,7 +16,10 @@ import questTheme from 'src/MyDesignSystemLightTheme';
 
 const useHeader = () => {
   let data: any = {
-    primaryDark: questTheme.palette.primary.dark
+    primaryMain: questTheme.palette.primary.main,
+    primaryDark: questTheme.palette.primary.dark,
+    backgroundDefault: questTheme.palette.background.default,
+    colorsGrey300: questTheme.palette.grey[300],
   };
 
   let fns: any = {};
