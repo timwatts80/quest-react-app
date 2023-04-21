@@ -16,7 +16,6 @@ import React from 'react';
 import UmbLogoImage from 'src/assets/images/Header_UMB_logo.png';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'src/types';
-import useHeader from 'src/components/Header/useHeader';
 
 const Header1: any = styled('div')({
   display: `flex`,
@@ -92,11 +91,9 @@ const Spacer: any = styled('div')(({ theme }: any) => ({
 }));
 
 function Header(props: HeaderProps): JSX.Element {
-  const { fns } = useHeader();
-
   return (
     <Header1 className={props.className}>
-      <TopNav backgroundColorPrimaryDark={fns.primaryDark}>
+      <TopNav>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs></Breadcrumbs>
