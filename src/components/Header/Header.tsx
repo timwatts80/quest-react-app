@@ -55,7 +55,9 @@ const UmbLogo: any = styled('img')({
   margin: `0px`,
 });
 
-const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
+const Breadcrumbs: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   color: theme.palette['primary']['main'],
   display: `flex`,
   position: `relative`,
@@ -66,9 +68,12 @@ const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `56px`,
   margin: `0px`,
+  backgroundColor: data.primaryMain,
 }));
 
-const AppNav: any = styled('div')(({ theme }: any) => ({
+const AppNav: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   color: theme.palette['colors']['grey']['300'],
   display: `flex`,
   position: `relative`,
@@ -79,6 +84,7 @@ const AppNav: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `50px`,
   margin: `0px`,
+  backgroundColor: data.colorsGrey300,
 }));
 
 const Spacer: any = styled('div')(({ theme }: any) => ({
@@ -102,8 +108,8 @@ function Header(props: HeaderProps): JSX.Element {
       <TopNav data={data}>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
-      <Breadcrumbs></Breadcrumbs>
-      <AppNav></AppNav>
+      <Breadcrumbs data={data}></Breadcrumbs>
+      <AppNav data={data}></AppNav>
       <Spacer></Spacer>
     </Header1>
   );
