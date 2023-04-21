@@ -16,7 +16,6 @@ import React from 'react';
 import UmbLogoImage from 'src/assets/images/Header_UMB_logo.png';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'src/types';
-import useHeader from 'src/components/Header/useHeader';
 
 const Header1: any = styled('div')({
   display: `flex`,
@@ -31,9 +30,7 @@ const Header1: any = styled('div')({
   height: 'auto',
 });
 
-const TopNav: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['fns'].includes(prop.toString()),
-})(({ theme, fns }: any) => ({
+const TopNav: any = styled('div')(({ theme }: any) => ({
   color: theme.palette['primary']['dark'],
   display: `flex`,
   position: `relative`,
@@ -46,7 +43,7 @@ const TopNav: any = styled('div', {
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-  backgroundColor: fns.getBGColor(),
+  backgroundColor: "theme.palette['primary']['dark']",
 }));
 
 const UmbLogo: any = styled('img')({
@@ -95,11 +92,9 @@ const Spacer: any = styled('div')(({ theme }: any) => ({
 }));
 
 function Header(props: HeaderProps): JSX.Element {
-  const { fns } = useHeader();
-
   return (
     <Header1 className={props.className}>
-      <TopNav fns={fns}>
+      <TopNav>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs></Breadcrumbs>
