@@ -11,9 +11,14 @@
  **********************************************************************/
 
 import React from 'react';
+import { styles } from '@mui/material/styles';
+import questTheme from 'src/MyDesignSystemLightTheme';
+
 const useHeader = () => {
   let data: any = {};
-  const getBGColor = (): any => {};
+  const getBGColor = (color:string): any => {
+    return 'theme.palette[primary][dark]';
+  };
 
   let fns: any = { getBGColor };
   return { data, fns };
