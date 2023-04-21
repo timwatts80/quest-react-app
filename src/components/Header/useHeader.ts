@@ -11,8 +11,13 @@
  **********************************************************************/
 
 import React from 'react';
+import { styled } from '@mui/material/styles';
+import questTheme from 'src/MyDesignSystemLightTheme';
+
 const useHeader = () => {
-  let data: any = {};
+  let data: any = {
+    primaryDark: questTheme.palette.primary.dark
+  };
 
   let fns: any = {};
   return { data, fns };
