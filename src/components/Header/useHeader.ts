@@ -12,9 +12,10 @@
 
 import React from 'react';
 const useHeader = () => {
+  const getBGColor = (): any => {};
   let data: any = {};
 
-  let fns: any = {};
+  let fns: any = {getBGColor};
   return { data, fns };
 };
 
