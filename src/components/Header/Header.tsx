@@ -87,7 +87,9 @@ const AppNav: any = styled('div', {
   backgroundColor: data.colorsGrey300,
 }));
 
-const Spacer: any = styled('div')(({ theme }: any) => ({
+const Spacer: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   color: theme.palette['primary']['contrast'],
   display: `flex`,
   position: `relative`,
@@ -98,6 +100,7 @@ const Spacer: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `40px`,
   margin: `0px`,
+  backgroundColor: data.backgroundDefault,
 }));
 
 function Header(props: HeaderProps): JSX.Element {
@@ -110,7 +113,7 @@ function Header(props: HeaderProps): JSX.Element {
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
       <AppNav data={data}></AppNav>
-      <Spacer></Spacer>
+      <Spacer data={data}></Spacer>
     </Header1>
   );
 }
