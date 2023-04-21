@@ -14,6 +14,7 @@
 
 import React from 'react';
 import { styled } from '@mui/material/styles';
+import VerticalTabs from '../SubTabs/SubTabs2';
 import Header from 'src/components/Header/Header';
 import FormEntity from 'src/components/FormEntity/FormEntity';
 import { PageParentProps } from 'src/types';
@@ -122,7 +123,8 @@ function PageParent(props: PageParentProps): JSX.Element {
           <Header2 />
         </Header1>
         <AppBody>
-          <LeftColumn></LeftColumn>
+          <LeftColumn>
+          </LeftColumn>
           <RightColumn>
             <FormEntity1 />
           </RightColumn>
