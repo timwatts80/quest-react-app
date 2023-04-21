@@ -13,8 +13,11 @@
  **********************************************************************/
 
 import React from 'react';
-import UmbLogoImage from 'src/assets/images/Header_UMB_logo.png';
 import { styled } from '@mui/material/styles';
+import TopNav from 'src/components/TopNav/TopNav';
+import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs';
+import AppNav from 'src/components/AppNav/AppNav';
+import Spacer from 'src/components/Spacer/Spacer';
 import { HeaderProps } from 'src/types';
 
 const Header1: any = styled('div')({
@@ -30,61 +33,25 @@ const Header1: any = styled('div')({
   height: 'auto',
 });
 
-const TopNav: any = styled('div')({
-  backgroundColor: `rgba(255, 0, 0, 1)`,
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  padding: `16px 100px`,
-  boxSizing: `border-box`,
+const TopNav1: any = styled(TopNav)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-});
+}));
 
-const UmbLogo: any = styled('img')({
-  height: `36px`,
-  width: `140.08px`,
-  margin: `0px`,
-});
-
-const Breadcrumbs: any = styled('div')(({ theme }: any) => ({
-  color: theme.palette['primary']['main'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const Breadcrumbs1: any = styled(Breadcrumbs)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `56px`,
   margin: `0px`,
 }));
 
-const AppNav: any = styled('div')(({ theme }: any) => ({
-  color: theme.palette['colors']['grey']['300'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const AppNav1: any = styled(AppNav)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `50px`,
   margin: `0px`,
 }));
 
-const Spacer: any = styled('div')(({ theme }: any) => ({
-  color: theme.palette['primary']['contrast'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
+const Spacer1: any = styled(Spacer)(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `40px`,
   margin: `0px`,
@@ -93,12 +60,10 @@ const Spacer: any = styled('div')(({ theme }: any) => ({
 function Header(props: HeaderProps): JSX.Element {
   return (
     <Header1 className={props.className}>
-      <TopNav>
-        <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
-      </TopNav>
-      <Breadcrumbs></Breadcrumbs>
-      <AppNav></AppNav>
-      <Spacer></Spacer>
+      <TopNav1 />
+      <Breadcrumbs1 />
+      <AppNav1 />
+      <Spacer1 />
     </Header1>
   );
 }
