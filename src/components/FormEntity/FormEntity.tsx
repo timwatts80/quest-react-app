@@ -245,7 +245,7 @@ const Button1: any = styled(Button)(({ theme }: any) => ({
   alignSelf: `stretch`,
   zIndex: `0`,
   margin: `16px 0px 0px 0px`,
-  color: theme.palette['primary']['contrast'],
+  color: theme.palette['colors']['grey']['500'],
   fontStyle: theme.typography['components']['button-large'].fontStyle,
   fontFamily: theme.typography['components']['button-large'].fontFamily,
   fontWeight: theme.typography['components']['button-large'].fontWeight,
