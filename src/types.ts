@@ -18,10 +18,12 @@
 
 
 
+
 export interface HeaderProps {
   className?: any;
   bgColor?: string;
 }
+
 
 
 
@@ -37,9 +39,11 @@ export interface FormEntityProps {
 
 
 
+
 export interface PageParentProps {
   className?: any;
 }
+
 
 
 
@@ -152,9 +156,11 @@ export interface SampleCardProps {
 
 
 
+
 export interface SampleCardGridProps {
   className?: any;
 }
+
 
 
 
@@ -277,6 +283,7 @@ export interface TestCardProps {
 
 
 
+
 export interface Form1Props {
   className?: any;
   prop1: any;
@@ -340,9 +347,11 @@ export interface Form1Props {
 
 
 
+
 export interface FormEntityOldProps {
   className?: any;
 }
+
 
 
 

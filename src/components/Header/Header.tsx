@@ -17,7 +17,6 @@ import UmbLogoImage from 'src/assets/images/Header_UMB_logo.png';
 import { styled } from '@mui/material/styles';
 import { HeaderProps } from 'src/types';
 import useHeader from 'src/components/Header/useHeader';
-import { TabBar } from 'src/components/Tabs/Tabs';
 
 const Header1: any = styled('div')({
   display: `flex`,
@@ -107,21 +106,13 @@ const Spacer: any = styled('div', {
 function Header(props: HeaderProps): JSX.Element {
   const { data } = useHeader();
 
-function Log() {
-  return console.log(data);
-}
-
-Log();
-
   return (
     <Header1 className={props.className}>
       <TopNav data={data}>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
-      <AppNav data={data}>
-        {data.tabBar}
-      </AppNav>
+      <AppNav data={data} data={data.tabBar}></AppNav>
       <Spacer data={data}></Spacer>
     </Header1>
   );
