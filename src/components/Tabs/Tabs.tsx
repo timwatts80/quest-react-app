@@ -2,42 +2,53 @@ import { useState } from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 
 export interface TabBarProps {
-  tabs: string[];
+    tabs: string[];
 }
 
 export function TabBar({ tabs }: TabBarProps) {
-  const [value, setValue] = useState<number>(0);
+    const [value, setValue] = useState<number>(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setValue(newValue);
+    };
 
-  return (
-    <Box sx={{ width: '100%', }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        centered
-        TabIndicatorProps={{
-          style: {
-            backgroundColor: '#fff',
-            height: 2,
-            transform: 'translateY(-100%)',
-          },
-          sx: {
-            '&.Mui-selected': {
-              transform: 'translateY(-100%)',
-            },
-            '&:hover': {
-              transform: 'translateY(-100%)',
-            },
-          },
-        }}
-      >
-        {tabs.map((label: string, index: number) => (
-          <Tab key={index} label={label} />
-        ))}
-      </Tabs>
-    </Box>
-  );
+    return (
+        <Box sx={{ position: 'absolute', width: '100%', bottom: '0px' }}>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                centered
+                TabIndicatorProps={{
+                    style: {
+                        height: 2,
+                        top: '0px',
+                    },
+                    sx: {
+                        '&.Mui-selected': {
+                            backgroundColor: '#fff',
+                        },
+                        '&:hover': {
+                            backgroundColor: '#fff',
+                        },
+                    },
+                }}
+            >
+                {tabs.map((label: string, index: number) => (
+                    <Tab
+                        key={index}
+                        label={label}
+                        sx={{
+                            height: '100%',
+                            '&.Mui-selected': {
+                                backgroundColor: '#fff',
+                            },
+                            '&:hover': {
+                                backgroundColor: '#fff',
+                            },
+                        }}
+                    />
+                ))}
+            </Tabs>
+        </Box>
+    );
 }

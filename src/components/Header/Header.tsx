@@ -82,7 +82,7 @@ const AppNav: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  height: 'auto',
+  height: '55px',
   margin: `0px`,
   backgroundColor: data.colorsGrey300,
 }));
