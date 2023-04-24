@@ -13,8 +13,27 @@ export function TabBar({ tabs }: TabBarProps) {
   };
 
   return (
-    <Box sx={{ width: '100%', bgcolor: 'grey.300' }}>
-      <Tabs value={value} onChange={handleChange} centered>
+    <Box sx={{ width: '100%', }}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        centered
+        TabIndicatorProps={{
+          style: {
+            backgroundColor: '#fff',
+            height: 2,
+            transform: 'translateY(-100%)',
+          },
+          sx: {
+            '&.Mui-selected': {
+              transform: 'translateY(-100%)',
+            },
+            '&:hover': {
+              transform: 'translateY(-100%)',
+            },
+          },
+        }}
+      >
         {tabs.map((label: string, index: number) => (
           <Tab key={index} label={label} />
         ))}
@@ -22,4 +41,3 @@ export function TabBar({ tabs }: TabBarProps) {
     </Box>
   );
 }
-

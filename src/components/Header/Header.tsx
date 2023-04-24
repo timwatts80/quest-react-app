@@ -82,7 +82,7 @@ const AppNav: any = styled('div', {
   justifyContent: `flex-start`,
   alignItems: `flex-start`,
   alignSelf: `stretch`,
-  height: `50px`,
+  height: 'auto',
   margin: `0px`,
   backgroundColor: data.colorsGrey300,
 }));
@@ -112,7 +112,9 @@ function Header(props: HeaderProps): JSX.Element {
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
-      <AppNav data={data}></AppNav>
+      <AppNav data={data}>
+        {data.tabBar}
+      </AppNav>
       <Spacer data={data}></Spacer>
     </Header1>
   );
