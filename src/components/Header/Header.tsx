@@ -70,22 +70,6 @@ const Breadcrumbs: any = styled('div', {
   backgroundColor: data.primaryMain,
 }));
 
-const AppNav: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  color: theme.palette['colors']['grey']['300'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  height: `50px`,
-  margin: `0px`,
-  backgroundColor: data.colorsGrey300,
-}));
-
 function Header(props: HeaderProps): JSX.Element {
   const { data } = useHeader();
 
@@ -95,7 +79,6 @@ function Header(props: HeaderProps): JSX.Element {
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
-      <AppNav data={data}></AppNav>
     </Header1>
   );
 }
