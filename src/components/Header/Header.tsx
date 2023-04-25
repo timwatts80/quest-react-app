@@ -109,7 +109,9 @@ function Header(props: HeaderProps): JSX.Element {
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
-      <AppNav data={data}></AppNav>
+      <AppNav data={data}>
+        {data.tabBar}
+      </AppNav>
       <Spacer data={data}></Spacer>
     </Header1>
   );
