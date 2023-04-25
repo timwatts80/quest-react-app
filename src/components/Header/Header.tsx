@@ -31,7 +31,9 @@ const Header1: any = styled('div')({
   height: 'auto',
 });
 
-const TopNav: any = styled('div')(({ theme }: any) => ({
+const TopNav: any = styled('div', {
+  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
+})(({ theme, data }: any) => ({
   color: theme.palette['primary']['dark'],
   display: `flex`,
   position: `relative`,
@@ -44,6 +46,7 @@ const TopNav: any = styled('div')(({ theme }: any) => ({
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
+  backgroundColor: data.primaryDark,
 }));
 
 const UmbLogo: any = styled('img')({
@@ -105,13 +108,11 @@ function Header(props: HeaderProps): JSX.Element {
 
   return (
     <Header1 className={props.className}>
-      <TopNav>
+      <TopNav data={data}>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
-      <AppNav data={data}>
-        {/* {data.tabBar} */}
-      </AppNav>
+      <AppNav data={data}></AppNav>
       <Spacer data={data}></Spacer>
     </Header1>
   );
