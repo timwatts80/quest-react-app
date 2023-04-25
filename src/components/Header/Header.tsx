@@ -31,9 +31,7 @@ const Header1: any = styled('div')({
   height: 'auto',
 });
 
-const TopNav: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
+const TopNav: any = styled('div')(({ theme }: any) => ({
   color: theme.palette['primary']['dark'],
   display: `flex`,
   position: `relative`,
@@ -46,7 +44,6 @@ const TopNav: any = styled('div', {
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-  backgroundColor: data.primaryDark,
 }));
 
 const UmbLogo: any = styled('img')({
@@ -57,8 +54,7 @@ const UmbLogo: any = styled('img')({
 
 const Breadcrumbs: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  color: theme.palette['primary']['main'],
+})(({ data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -87,33 +83,16 @@ const AppNav: any = styled('div', {
   backgroundColor: data.colorsGrey300,
 }));
 
-const Spacer: any = styled('div', {
-  shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ theme, data }: any) => ({
-  color: theme.palette['primary']['contrast'],
-  display: `flex`,
-  position: `relative`,
-  isolation: `isolate`,
-  flexDirection: `row`,
-  justifyContent: `flex-start`,
-  alignItems: `flex-start`,
-  alignSelf: `stretch`,
-  height: `40px`,
-  margin: `0px`,
-  backgroundColor: data.backgroundDefault,
-}));
-
 function Header(props: HeaderProps): JSX.Element {
   const { data } = useHeader();
 
   return (
     <Header1 className={props.className}>
-      <TopNav data={data}>
+      <TopNav>
         <UmbLogo src={UmbLogoImage} loading="lazy" alt={'UMB-logo'} />
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
       <AppNav data={data}></AppNav>
-      <Spacer data={data}></Spacer>
     </Header1>
   );
 }
