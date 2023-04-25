@@ -110,7 +110,7 @@ function Header(props: HeaderProps): JSX.Element {
       </TopNav>
       <Breadcrumbs data={data}></Breadcrumbs>
       <AppNav data={data}>
-        {data.tabBar}
+        {/* {data.tabBar} */}
       </AppNav>
       <Spacer data={data}></Spacer>
     </Header1>
