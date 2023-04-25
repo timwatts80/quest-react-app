@@ -46,7 +46,7 @@ const TopNav: any = styled('div', {
   alignSelf: `stretch`,
   height: `68px`,
   margin: `0px`,
-  backgroundColor: data.primary.dark,
+  backgroundColor: data.primaryDark,
 }));
 
 const UmbLogo: any = styled('img')({
