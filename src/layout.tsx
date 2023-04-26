@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import BasicTabs from 'src/components/Tabs/Tabs2';
+import questTheme from 'src/MyDesignSystemLightTheme';
+import TabContent from 'src/components/Tabs/Tabs2';
 import { TabPanel, TabPanelProps } from './components/Tabs/Tabs2';
 import Header from 'src/components/Header/Header';
 
-const HeaderContainer = styled(Grid)(({ theme }: any) => ({
-    height: '200px',
-    backgroundColor: theme.palette.colors.grey['400'],
+const MainStack = styled(Stack)(({ theme }: any) => ({
+    height: '100vh',
+    backgroundColor: 'lightgrey',
 }));
 
-const SideBar = styled(Grid)(({ theme }: any) => ({
-    width: '200px',
-    backgroundColor: theme.palette.background.default,
+const HeaderContainer = styled(Grid)(({ theme }: any) => ({
+    height: 'auto',
+    backgroundColor: theme.palette.colors.grey['400'],
 }));
 
 const Content = styled(Grid)(({ theme }: any) => ({
@@ -20,30 +21,23 @@ const Content = styled(Grid)(({ theme }: any) => ({
     flexGrow: 1,
 }));
 
-const MainGrid = styled(Grid)(({ theme }: any) => ({
-    height: '100vh',
-    backgroundColor: 'lightgrey',
-}));
-
 const GridContainer = styled(Grid)(({ theme }: any) => ({
-    height: 'calc(100% - 200px)',
-    bottom: '0px',
+    height: 'calc(100vh - 124px)',
 }));
 
-
-function MyLayout(): JSX.Element {
+function PageLayout(): JSX.Element {
     const [value, setValue] = useState(0);
 
     return (
-        <MainGrid container gap={0}>
+        <MainStack spacing={0}>
             <HeaderContainer item xl={12} xs={12}>
                 <Header />
             </HeaderContainer>
             <GridContainer container>
-                <BasicTabs />
+                <TabContent />
             </GridContainer>
-        </MainGrid>
+        </MainStack>
     );
 }
 
-export default MyLayout;
+export default PageLayout;

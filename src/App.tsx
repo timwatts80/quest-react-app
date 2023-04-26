@@ -4,7 +4,6 @@ import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import questTheme from 'src/MyDesignSystemLightTheme';
 import PageParent from 'src/components/PageParent/PageParent';
 import MyLayout from './layout';
-// import FormEntity from './components/FormEntity/FormEntity';
 import { Stack } from '@mui/material';
 
 function App() {

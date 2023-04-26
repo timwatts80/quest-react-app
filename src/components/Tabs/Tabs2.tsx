@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { styled, createTheme } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { Grid } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
+import questTheme from 'src/MyDesignSystemLightTheme';
 
 export interface TabPanelProps {
     children?: React.ReactNode;
@@ -11,11 +13,43 @@ export interface TabPanelProps {
     value: number;
 }
 
+const ContentGrid: any = styled(Stack)(({ theme }: any) => ({
+    height: '100%',
+    width: '100%',
+    backgroundColor: theme.palette.colors.grey['300'],
+}))
+
+const AppNavTab: any = styled(Tab)(({ theme }: any) => ({
+    '&:hover, &.Mui-selected': {
+        backgroundColor: theme.palette.primary.contrast,
+    },
+}));
+
+const SubNavTab = styled(Tab)(({ theme }: any) => ({
+    '&:hover, &.Mui-selected': {
+        backgroundColor: theme.palette.primary.contrast,
+    },
+}));
+
+const TabPanelContainer = styled('div')({
+    flexGrow: 1,
+    height: '100%',
+});
+
+const SubNav: any = styled(Box)(({ theme }: any) => ({
+    backgroundColor: '#f2f2f2',
+    height: '100%',
+}));
+
+const MainContent: any = styled(Box)(({ theme }: any) => ({
+    backgroundColor: 'yellow', height: '100%',
+}));
+
 export function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
 
     return (
-        <div
+        <TabPanelContainer
             role="tabpanel"
             hidden={value !== index}
             id={`simple-tabpanel-${index}`}
@@ -23,26 +57,27 @@ export function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Grid container spacing={0} sx={{ backgroundColor: '#fff', height: '100%'}}>
-                    <Grid item xs={3}>
-                        <Box sx={{ p: 3 }}>
-                            <Tabs>
-                                <Tab label="Item One" />
-                                <Tab label="Item Two" />
-                                <Tab label="Item Three" />
-                            </Tabs>
-                        </Box>
+                <Grid
+                    container
+                    spacing={0}
+                    sx={{
+                        position: 'relative',
+                        height: '100%',
+                    }}
+                >
+                    <Grid item xs={3} md={2}>
                     </Grid>
-                    <Grid item xs={9}>
-                        <Box sx={{ p: 3 }}>
+                    <Grid item xs={9} md={10}>
+                        <MainContent>
                             <Typography>{children}</Typography>
-                        </Box>
+                        </MainContent>
                     </Grid>
                 </Grid>
             )}
-        </div>
+        </TabPanelContainer>
     );
 }
+
 
 function a11yProps(index: number) {
     return {
@@ -51,48 +86,55 @@ function a11yProps(index: number) {
     };
 }
 
-export default function BasicTabs() {
+// Main app nav. Tabs and content frames.
+export default function TabPage() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
 
-    const tabStyles = {
-        '&:hover, &.Mui-selected': {
-            bgcolor: 'white',
-        },
-    };
-
     return (
-        <Box sx={{ height: 'auto', width: '100%', backgroundColor: '#ff0000' }}>
-            <Box sx={{ position: 'relative', width: '100%', borderColor: 'divider' }}>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    TabIndicatorProps={{ sx: { top: 0 } }}
-                    aria-label="basic tabs example"
-                    sx={{
-                        position: 'absolute',
-                        bottom: '0px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                    }}
-                >
-                    <Tab label="Item One" {...a11yProps(0)} sx={tabStyles} />
-                    <Tab label="Item Two" {...a11yProps(1)} sx={tabStyles} />
-                    <Tab label="Item Three" {...a11yProps(2)} sx={tabStyles} />
-                </Tabs>
+        <ContentGrid>
+            <Box sx={{
+                height: '100%',
+                width: '100%',
+            }}>
+                <Box sx={{
+                    position: 'relative',
+                    height: '100%',
+                    width: '100%',
+                    maxHeight: '52px',
+                }}>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        TabIndicatorProps={{ sx: { top: 0 } }}
+                        aria-label="basic tabs example"
+                        sx={{
+                            position: 'absolute',
+                            bottom: '0px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                        }}
+                    >
+                        <AppNavTab label="Item One" {...a11yProps(0)} />
+                        <AppNavTab label="Item Two" {...a11yProps(1)} />
+                        <AppNavTab label="Item Three" {...a11yProps(2)} />
+                    </Tabs>
+                </Box>
+                <Box sx={{ height: '100%', width: '100%', }}>
+                    <TabPanel value={value} index={0}>
+                        Item One Content
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        Item Two Content
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        Item Three Content
+                    </TabPanel>
+                </Box>
             </Box>
-            <TabPanel value={value} index={0}>
-                Item One
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
-            </TabPanel>
-        </Box>
+        </ContentGrid>
     );
 }
