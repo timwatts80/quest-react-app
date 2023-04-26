@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, createTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { Tab, Tabs, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { Grid, Stack } from '@mui/material';
@@ -23,9 +23,20 @@ const SubNav: any = styled(Box)(({ theme }: any) => ({
 
 const SubNavTab = styled(Tab)(({ theme }: any) => ({
     backgroundColor: theme.palette.primary.contrast,
+    padding: '24px 42px',
     '&:hover, &.Mui-selected': {
         backgroundColor: theme.palette.colors.grey['300'],
     },
+}));
+
+const SubNavTabLabel: any = styled(Stack)(({ theme }: any) => ({
+    width: '100%',
+    textAlign: 'left',
+}));
+
+const SubTabLabelDesc: any = styled('span')(({ theme }: any) => ({
+    ...theme.typography.typography.body3,
+    textTransform: 'none',
 }));
 
 const SubTabPanelContainer = styled('div')({
@@ -36,6 +47,15 @@ const SubTabPanelContainer = styled('div')({
 const MainContent: any = styled(Box)(({ theme }: any) => ({
     height: '100%',
 }));
+
+const tabsData = 
+    [
+        {
+            "tab1": "Item One",
+            "tab2": "Item Two",
+            "tab3": "Item Three"
+        }
+    ];
 
 export function SubTabPanel(props: SubTabPanelProps) {
     const { children, value, index, ...other } = props;
@@ -74,7 +94,7 @@ export default function SubTabs() {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
-    
+
     return (
 
         <ContentGrid container>
@@ -89,9 +109,9 @@ export default function SubTabs() {
                         maxWidth: '360px',
                     }}
                 >
-                    <SubNavTab label={<span className={classes.tabLabel}>Label</span>} {...a11yProps(0)} aria-label="Test" />
-                    <SubNavTab label="Item Two" {...a11yProps(1)} />
-                    <SubNavTab label="Item Three" {...a11yProps(2)} />
+                    <SubNavTab label={<><SubNavTabLabel><span>Item One</span><SubTabLabelDesc>Lorem Ipsum Dolor</SubTabLabelDesc></SubNavTabLabel></>} {...a11yProps(0)} />
+                    <SubNavTab label={<><SubNavTabLabel><span>Item Two</span><SubTabLabelDesc>Lorem Ipsum Dolor</SubTabLabelDesc></SubNavTabLabel></>} {...a11yProps(1)} />
+                    <SubNavTab label={<><SubNavTabLabel><span>Item Three</span><SubTabLabelDesc>Lorem Ipsum Dolor</SubTabLabelDesc></SubNavTabLabel></>} {...a11yProps(2)} />
                 </Tabs>
             </Grid>
             <Grid item xs={9}>

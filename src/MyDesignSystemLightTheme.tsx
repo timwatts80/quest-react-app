@@ -565,6 +565,16 @@ const globalTheme: any = createTheme({
         lineHeight: '142.99999475479126%',
         textTransform: 'none',
       },
+      body3: {
+        fontStyle: 'normal',
+        fontFamily: 'Roboto',
+        fontWeight: 400,
+        fontSize: '13px',
+        letterSpacing: '0.023800000250339508px',
+        textDecoration: 'none',
+        lineHeight: '142.99999475479126%',
+        textTransform: 'none',
+      },
       subtitle1: {
         fontStyle: 'normal',
         fontFamily: 'Roboto',
