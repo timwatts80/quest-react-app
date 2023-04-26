@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Stack } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TabContent from 'src/components/Tabs/AppNavTabs';
 import { TabPanel, TabPanelProps } from './components/Tabs/AppNavTabs';

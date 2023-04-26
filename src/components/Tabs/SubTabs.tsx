@@ -14,7 +14,7 @@ export interface SubTabPanelProps {
 const ContentGrid: any = styled(Grid)(({ theme }: any) => ({
     height: '100%',
     width: '100%',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.contrast,
 }))
 
 const SubNav: any = styled(Box)(({ theme }: any) => ({
@@ -22,8 +22,9 @@ const SubNav: any = styled(Box)(({ theme }: any) => ({
 }));
 
 const SubNavTab = styled(Tab)(({ theme }: any) => ({
+    backgroundColor: theme.palette.primary.contrast,
     '&:hover, &.Mui-selected': {
-        backgroundColor: theme.palette.primary.contrast,
+        backgroundColor: theme.palette.colors.grey['300'],
     },
 }));
 
@@ -48,22 +49,14 @@ export function SubTabPanel(props: SubTabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Grid
-                    container
-                    spacing={0}
-                    sx={{
-                        position: 'relative',
-                        height: '100%',
-                    }}
-                >
-                    <Grid item xs={12}>
-                        <MainContent>
-                            <Typography sx={{ p: 3 }}>{children}</Typography>
-                        </MainContent>
-                    </Grid>
-                </Grid>
-            )}
-        </SubTabPanelContainer>
+                <Box>
+                    <MainContent>
+                        <Typography sx={{ p: 3 }}>{children}</Typography>
+                    </MainContent>
+                </Box>
+            )
+            }
+        </SubTabPanelContainer >
     );
 }
 
@@ -81,33 +74,37 @@ export default function SubTabs() {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
-
+    
     return (
+
         <ContentGrid container>
-                <Grid item xs={3}>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        TabIndicatorProps={{ sx: { top: 0 } }}
-                        aria-label="basic tabs example"
-                        orientation='vertical'
-                    >
-                        <SubNavTab label="Item One" {...a11yProps(0)} />
-                        <SubNavTab label="Item Two" {...a11yProps(1)} />
-                        <SubNavTab label="Item Three" {...a11yProps(2)} />
-                    </Tabs>
-                </Grid>
-                <Grid item xs={9}>
-                    <SubTabPanel value={value} index={0}>
-                        Item One Content
-                    </SubTabPanel>
-                    <SubTabPanel value={value} index={1}>
-                        Item Two Content
-                    </SubTabPanel>
-                    <SubTabPanel value={value} index={2}>
-                        Item Three Content
-                    </SubTabPanel>
-                </Grid>
+            <Grid item xs={3}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    TabIndicatorProps={{ sx: { top: 0 } }}
+                    aria-label="basic tabs example"
+                    orientation='vertical'
+                    sx={{
+                        maxWidth: '360px',
+                    }}
+                >
+                    <SubNavTab label={<span className={classes.tabLabel}>Label</span>} {...a11yProps(0)} aria-label="Test" />
+                    <SubNavTab label="Item Two" {...a11yProps(1)} />
+                    <SubNavTab label="Item Three" {...a11yProps(2)} />
+                </Tabs>
+            </Grid>
+            <Grid item xs={9}>
+                <SubTabPanel value={value} index={0}>
+                    Item One Content
+                </SubTabPanel>
+                <SubTabPanel value={value} index={1}>
+                    Item Two Content
+                </SubTabPanel>
+                <SubTabPanel value={value} index={2}>
+                    Item Three Content
+                </SubTabPanel>
+            </Grid>
         </ContentGrid>
     );
 }
