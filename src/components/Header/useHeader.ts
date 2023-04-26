@@ -13,12 +13,11 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import questTheme from 'src/MyDesignSystemLightTheme';
-import { TabBar, TabBarProps } from 'src/components/Tabs/Tabs';
+import TabPage from 'src/components/Tabs/AppNavTabs';
 
 const useHeader = () => {
   const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
   let data: any = {
-    tabBar: TabBar({ tabs }),
     primaryMain: questTheme.palette.primary.main,
     primaryDark: questTheme.palette.primary.dark,
     backgroundDefault: questTheme.palette.background.default,

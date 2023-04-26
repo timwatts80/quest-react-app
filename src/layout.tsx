@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Grid, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import questTheme from 'src/MyDesignSystemLightTheme';
-import TabContent from 'src/components/Tabs/Tabs2';
-import { TabPanel, TabPanelProps } from './components/Tabs/Tabs2';
+import TabContent from 'src/components/Tabs/AppNavTabs';
+import { TabPanel, TabPanelProps } from './components/Tabs/AppNavTabs';
 import Header from 'src/components/Header/Header';
 
 const MainStack = styled(Stack)(({ theme }: any) => ({
