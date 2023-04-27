@@ -116,7 +116,7 @@ export default function SubTabs() {
             </Grid>
             <Grid item xs={9}>
                 <SubTabPanel value={value} index={0}>
-                    Item One Content
+                    <FormEntity />
                 </SubTabPanel>
                 <SubTabPanel value={value} index={1}>
                     Item Two Content
