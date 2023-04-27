@@ -15,10 +15,20 @@ export interface TabPanelProps {
 const ContentGrid: any = styled(Stack)(({ theme }: any) => ({
     height: '100%',
     width: '100%',
-    backgroundColor: 'red',
-}))
+    backgroundColor: theme.palette.primary.contrast,
+}));
+
+const TabBar: any = styled(Box)(({ theme }: any ) => ({
+    position: 'relative',
+    height: '100%',
+    width: '100%',
+    maxHeight: '52px',
+    backgroundColor: theme.palette.colors.grey['200'],
+}));
 
 const AppNavTab: any = styled(Tab)(({ theme }: any) => ({
+    backgroundColor: theme.palette.colors.grey['300'],
+    margin: '0px 1px',
     '&:hover, &.Mui-selected': {
         backgroundColor: theme.palette.primary.contrast,
     },
@@ -70,12 +80,7 @@ export default function TabPage() {
                 height: '100%',
                 width: '100%',
             }}>
-                <Box sx={{
-                    position: 'relative',
-                    height: '100%',
-                    width: '100%',
-                    maxHeight: '52px',
-                }}>
+                <TabBar>
                     <Tabs
                         value={value}
                         onChange={handleChange}
@@ -92,8 +97,14 @@ export default function TabPage() {
                         <AppNavTab label="Item Two" {...a11yProps(1)} />
                         <AppNavTab label="Item Three" {...a11yProps(2)} />
                     </Tabs>
-                </Box>
-                <Box sx={{ height: '100%', width: '100%', }}>
+                </TabBar>
+                <Box
+                    sx={{
+                        height: '40px',
+                        width:  '100%',
+                    }}
+                />
+                <Box sx={{ width: '100%', }}>
                     <TabPanel value={value} index={0}>
                         <SubTabs />
                     </TabPanel>
