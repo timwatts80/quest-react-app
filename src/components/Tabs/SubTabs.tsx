@@ -44,7 +44,8 @@ const SubTabPanelContainer = styled('div')({
     height: '100%',
 });
 
-const MainContent: any = styled(Box)(({ theme }: any) => ({
+const MainContent: any = styled('div')(({ theme }: any) => ({
+    display: 'flex ',   
     justifyContent: 'center',
     alignItems: 'center',  
 }));
@@ -71,7 +72,7 @@ export function SubTabPanel(props: SubTabPanelProps) {
         >
             {value === index && (
                 <Box>
-                    <MainContent>{children}</MainContent>
+                    
                 </Box>
             )
             }
