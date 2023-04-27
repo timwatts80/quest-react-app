@@ -45,7 +45,8 @@ const SubTabPanelContainer = styled('div')({
 });
 
 const MainContent: any = styled(Box)(({ theme }: any) => ({
-    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',  
 }));
 
 const tabsData = 
@@ -70,9 +71,7 @@ export function SubTabPanel(props: SubTabPanelProps) {
         >
             {value === index && (
                 <Box>
-                    <MainContent>
-                        <Typography sx={{ p: 3 }}>{children}</Typography>
-                    </MainContent>
+                    <MainContent>{children}</MainContent>
                 </Box>
             )
             }
