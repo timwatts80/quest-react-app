@@ -34,7 +34,6 @@ const Header1: any = styled('div')({
 const TopNav: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
 })(({ theme, data }: any) => ({
-  color: theme.palette['primary']['dark'],
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
@@ -57,7 +56,7 @@ const UmbLogo: any = styled('img')({
 
 const Breadcrumbs: any = styled('div', {
   shouldForwardProp: (prop: any) => !['data'].includes(prop.toString()),
-})(({ data }: any) => ({
+})(({ theme, data }: any) => ({
   display: `flex`,
   position: `relative`,
   isolation: `isolate`,
